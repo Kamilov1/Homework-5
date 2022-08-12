@@ -30,8 +30,20 @@
             array[i] = random.Next(100, 1000);
         }
     }
+
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (array[i] % 2 == 0)
+        {
+            count++;
+        }
+    }
+
+    Console.WriteLine(count);
 }
-Zadacha34();
+
+//Zadacha34();
 
 void Zadacha36()
 {
@@ -62,11 +74,22 @@ void Zadacha36()
 
         for (int i = 0; i < size; i++)
         {
-            array[i] = random.Next(0, 20);
+            array[i] = random.Next(1, 20);
         }
     }
+
+    int sum = 0;
+    for (int i = 0; i < size; i ++)
+    {
+        if (array[i] % 2 != 0)
+        {
+            sum += array[i];
+        }
+    }
+    Console.WriteLine(sum);
 }
-//Zadacha36();
+
+Zadacha36();
 
 void Zadacha38()
 {
