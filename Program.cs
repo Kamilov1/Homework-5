@@ -79,7 +79,7 @@ void Zadacha36()
     }
 
     int sum = 0;
-    for (int i = 0; i < size; i ++)
+    for (int i = 0; i < size; i++)
     {
         if (array[i] % 2 != 0)
         {
@@ -89,7 +89,7 @@ void Zadacha36()
     Console.WriteLine(sum);
 }
 
-Zadacha36();
+//Zadacha36();
 
 void Zadacha38()
 {
@@ -98,30 +98,29 @@ void Zadacha38()
 
     Console.Write("Цифра: ");
     int size = Convert.ToInt32(Console.ReadLine());
-    int[] array = new int[size];
+    double[] array = new double[size];
+    Random random = new Random();
 
-    FillArray(array);
-    PrintArray(array);
-
-    void PrintArray(int[] array)
+    for (int i = 0; i < size; i++)
     {
-        int size = array.Length;
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write(array[i] + ", ");
-        }
-        Console.WriteLine();
+        array[i] = Math.Round(random.NextDouble() * 100 - 50, 2); // -50 ... 50
     }
 
-    void FillArray(int[] array)
+    for (int i = 0; i < size; i++)
     {
-        int size = array.Length;
-        Random random = new Random();
-
-        for (int i = 0; i < size; i++)
-        {
-            array[i] = random.Next(0, 10);
-        }
+        Console.Write(array[i] + ", ");
     }
+    Console.WriteLine();
+
+    double min = array[0];
+    double max = array[0];
+    for (int i = 0; i < size; i++)
+    {
+        if(array[i] > max) max = array[i];
+        else if (array[i] < min) min = array[i];
+    }
+    Console.WriteLine($"{max} максимальное число, {min} минимальное число, и их вычитание {max - min}");
+
 }
-//Zadacha38();
+
+Zadacha38();
